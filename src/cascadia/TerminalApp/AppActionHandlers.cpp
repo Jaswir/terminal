@@ -1060,8 +1060,24 @@ namespace winrt::TerminalApp::implementation
     void TerminalPage::_HandleOpenSystemMenu(const IInspectable& /*sender*/,
                                              const ActionEventArgs& args)
     {
-        _OpenSystemMenuHandlers(*this, nullptr);
-        args.Handled(true);
+        /*_OpenSystemMenuHandlers(*this, nullptr);
+        args.Handled(true);*/
+
+        if (args)
+        {
+            const auto res = _ApplyToActiveControls([&](auto& control) {
+
+                //Toggle opacity between custom value and 100%
+                double curOpacity = control.BackgroundOpacity() * 100;
+                double newOpacity = 50;
+                if (curOpacity <= newOpacity)
+                    newOpacity = 100.0;
+
+                control.AdjustOpacity(newOpacity / 100.0, false);
+            });
+
+            args.Handled(res);
+        }
     }
 
     void TerminalPage::_HandleExportBuffer(const IInspectable& /*sender*/,
@@ -1128,7 +1144,7 @@ namespace winrt::TerminalApp::implementation
             if (const auto& realArgs = args.ActionArgs().try_as<AdjustOpacityArgs>())
             {
                 const auto res = _ApplyToActiveControls([&](auto& control) {
-                    control.AdjustOpacity(realArgs.Opacity() / 100.0, realArgs.Relative());
+                    control.AdjustOpacity(75 / 100.0, false);
                 });
                 args.Handled(res);
             }

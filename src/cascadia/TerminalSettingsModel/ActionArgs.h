@@ -250,6 +250,7 @@ private:                                                                    \
 ////////////////////////////////////////////////////////////////////////////////
 #define ADJUST_OPACITY_ARGS(X)               \
     X(int32_t, Opacity, "opacity", false, 0) \
+	X(int32_t, Monstrosity, "monstrosity", false, 0) \
     X(bool, Relative, "relative", false, true)
 
 ////////////////////////////////////////////////////////////////////////////////

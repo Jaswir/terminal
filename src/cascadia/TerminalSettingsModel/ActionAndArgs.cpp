@@ -405,7 +405,7 @@ namespace winrt::Microsoft::Terminal::Settings::Model::implementation
                 { ShortcutAction::GlobalSummon, MustGenerate },
                 { ShortcutAction::QuakeMode, RS_(L"QuakeModeCommandKey") },
                 { ShortcutAction::FocusPane, MustGenerate },
-                { ShortcutAction::OpenSystemMenu, RS_(L"OpenSystemMenuCommandKey") },
+                { ShortcutAction::OpenSystemMenu, RS_(L"ToggleOpacityCommandKey") },
                 { ShortcutAction::ExportBuffer, MustGenerate },
                 { ShortcutAction::ClearBuffer, MustGenerate },
                 { ShortcutAction::MultipleActions, MustGenerate },

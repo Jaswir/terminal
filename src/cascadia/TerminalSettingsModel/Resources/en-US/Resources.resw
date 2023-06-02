@@ -529,6 +529,9 @@
   <data name="ExportBufferCommandKey" xml:space="preserve">
     <value>Export text</value>
   </data>
+   <data name="ToggleOpacityCommandKey" xml:space="preserve">
+    <value>Toggle Opacity</value>
+  </data>
   <data name="ClearAllCommandKey" xml:space="preserve">
     <value>Clear buffer</value>
     <comment>A command to clear the entirety of the Terminal output buffer</comment>
