@@ -1057,16 +1057,11 @@ namespace winrt::TerminalApp::implementation
         }
     }
 
-    void TerminalPage::_HandleOpenSystemMenu(const IInspectable& /*sender*/,
-                                             const ActionEventArgs& args)
-    {
-        /*_OpenSystemMenuHandlers(*this, nullptr);
-        args.Handled(true);*/
-
+    void TerminalPage::_HandleToggleOpacity (const IInspectable& /*sender*/,
+        const ActionEventArgs& args) {
         if (args)
         {
             const auto res = _ApplyToActiveControls([&](auto& control) {
-
                 //Toggle opacity between custom value and 100%
                 double curOpacity = control.BackgroundOpacity() * 100;
                 double newOpacity = 50;
@@ -1078,6 +1073,13 @@ namespace winrt::TerminalApp::implementation
 
             args.Handled(res);
         }
+    }
+
+    void TerminalPage::_HandleOpenSystemMenu(const IInspectable& /*sender*/,
+                                             const ActionEventArgs& args)
+    {
+        _OpenSystemMenuHandlers(*this, nullptr);
+        args.Handled(true);
     }
 
     void TerminalPage::_HandleExportBuffer(const IInspectable& /*sender*/,

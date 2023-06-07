@@ -92,6 +92,7 @@ static constexpr std::string_view ColorSelectionKey{ "experimental.colorSelectio
 static constexpr std::string_view ShowContextMenuKey{ "showContextMenu" };
 static constexpr std::string_view ExpandSelectionToWordKey{ "expandSelectionToWord" };
 static constexpr std::string_view RestartConnectionKey{ "restartConnection" };
+static constexpr std::string_view ToggleOpacityKey{ "toggleOpacity" };
 
 static constexpr std::string_view ActionKey{ "action" };
 
@@ -405,7 +406,7 @@ namespace winrt::Microsoft::Terminal::Settings::Model::implementation
                 { ShortcutAction::GlobalSummon, MustGenerate },
                 { ShortcutAction::QuakeMode, RS_(L"QuakeModeCommandKey") },
                 { ShortcutAction::FocusPane, MustGenerate },
-                { ShortcutAction::OpenSystemMenu, RS_(L"ToggleOpacityCommandKey") },
+                { ShortcutAction::OpenSystemMenu, RS_(L"OpenSystemMenuCommandKey") },
                 { ShortcutAction::ExportBuffer, MustGenerate },
                 { ShortcutAction::ClearBuffer, MustGenerate },
                 { ShortcutAction::MultipleActions, MustGenerate },
@@ -422,6 +423,7 @@ namespace winrt::Microsoft::Terminal::Settings::Model::implementation
                 { ShortcutAction::ShowContextMenu, RS_(L"ShowContextMenuCommandKey") },
                 { ShortcutAction::ExpandSelectionToWord, RS_(L"ExpandSelectionToWordCommandKey") },
                 { ShortcutAction::RestartConnection, RS_(L"RestartConnectionKey") },
+                { ShortcutAction::ToggleOpacity, RS_(L"ToggleOpacityCommandKey") } 
             };
         }();
 
